@@ -16,4 +16,4 @@ $(TARGET): $(OBJS)
 
 clean:
 	@echo "Removing object files..."
-	@rm -rf *.o
+	rm -rf *.o
