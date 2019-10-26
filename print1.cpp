@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main() {
+void print1() {
     
-    std::cout << "Branch 1: [OK]" << std::endl;
-    return 0;
+    std::cout << "Print 1: [OK]" << std::endl;  
 }

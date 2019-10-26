@@ -1,11 +1,12 @@
 CXX = g++
 
 CXXFLAGS = -W -Wall -pedantic -ansi
-TARGET = print1
+TARGET = ./bin/main
+OBJ = main.o print1.o print2.o
 
-all: $(TARGET)
+all: $(TARGET) clean
 
-print1: print1.o
+$(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ *.o 
 
 %.o: %.cpp
@@ -13,4 +14,3 @@ print1: print1.o
 
 clean:
 	rm -rf *.o
-	rm -rf $(TARGET)
