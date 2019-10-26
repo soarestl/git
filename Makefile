@@ -1,16 +1,19 @@
 CXX = g++
 
 CXXFLAGS = -W -Wall -pedantic -ansi
-TARGET = print1
+TARGET = ./bin/main
+OBJS = main.o print3.o
 
-all: $(TARGET)
+all: $(TARGET) clean
 
-print1: print1.o
-	$(CXX) $(CXXFLAGS) -o $@ *.o 
+$(TARGET): $(OBJS)
+	@echo "Creating Main's binary..."
+	@$(CXX) $(CXXFLAGS) -o $@ $(OBJS) 
 
 %.o: %.cpp
-	$(CXX) -c $(CXXFLAGS) $< -o $@ 
+	@echo "Compiling $@ object..."
+	@$(CXX) -c $(CXXFLAGS) $< -o $@ 
 
 clean:
+	@echo "Removing object files..."
 	rm -rf *.o
-	rm -rf $(TARGET)
